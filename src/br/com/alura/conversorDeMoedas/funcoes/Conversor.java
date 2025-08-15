@@ -1,4 +1,6 @@
-package br.com.alura.conversorDeMoedas.service;
+package br.com.alura.conversorDeMoedas.funcoes;
+
+import br.com.alura.conversorDeMoedas.service.DadosMoedas;
 
 public class Conversor {
     //private String data;
@@ -12,6 +14,12 @@ public class Conversor {
         this.moedaBase = meusDadosMoedas.base_code();
         this.moedaAlvo = meusDadosMoedas.target_code();
         this.cotacao = meusDadosMoedas.conversion_rate();
+    }
+
+    public void converterMoeda(double valorParaConverter){
+       double resultado =  valorParaConverter * this.cotacao;
+        System.out.println("O valor: " + valorParaConverter + " [" + this.moedaBase + "]" +" corresponde a " + resultado + " [" + this.moedaAlvo + "]\n");
+        System.out.println("*******************************************\n");
     }
 
     public String getMoedaBase() {
